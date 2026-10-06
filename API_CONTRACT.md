@@ -16,13 +16,14 @@ Example:
 
 ### Success Response
 
-```json
 {
   "success": true,
   "data": {},
   "message": "Success"
 }
-Error Response
+
+### Error Response
+
 {
   "success": false,
   "error": {
@@ -30,8 +31,12 @@ Error Response
     "message": "Trip not found"
   }
 }
-##3. Users
-Create User
+
+---
+
+## 3. Users
+
+### Create User
 
 POST
 
@@ -43,14 +48,18 @@ Request:
   "name": "Mownica",
   "email": "user@example.com"
 }
-Get User
+
+### Get User
 
 GET
 
 /api/users/{user_id}
 
-4. Trips
-Create Trip
+---
+
+## 4. Trips
+
+### Create Trip
 
 POST
 
@@ -72,38 +81,42 @@ Request:
   "travelStyle": "balanced",
   "preferredTransport": "flight"
 }
-Get User Trips
+
+### Get User Trips
 
 GET
 
 /api/trips?userId=USER001
 
-Get Trip
+### Get Trip
 
 GET
 
 /api/trips/{trip_id}
 
-Delete Trip
+### Delete Trip
 
 DELETE
 
 /api/trips/{trip_id}
 
-Generate Itinerary
+### Generate Itinerary
 
 POST
 
 /api/trips/{trip_id}/generate
 
-Get Itinerary
+### Get Itinerary
 
 GET
 
 /api/trips/{trip_id}/itinerary
 
-5. Bookings
-Create Booking
+---
+
+## 5. Bookings
+
+### Create Booking
 
 POST
 
@@ -120,42 +133,48 @@ Request:
   "arrival": "2026-10-18T11:30:00",
   "status": "ON_TIME"
 }
-Get Trip Bookings
+
+### Get Trip Bookings
 
 GET
 
 /api/trips/{trip_id}/bookings
 
-Get Booking
+### Get Booking
 
 GET
 
 /api/bookings/{booking_id}
 
-Update Booking
+### Update Booking
 
 PUT
 
 /api/bookings/{booking_id}
 
-6. AeroSync
-Start AeroSync Monitoring
+---
+
+## 6. AeroSync
+
+### Start AeroSync Monitoring
 
 POST
 
 /api/aerosync/start/{trip_id}
 
-Get AeroSync Status
+### Get AeroSync Status
 
 GET
 
 /api/aerosync/{trip_id}/status
 
-7. Demo Disruption APIs
+---
+
+## 7. Demo Disruption APIs
 
 These APIs are used for the hackathon demonstration.
 
-Simulate Flight Delay
+### Simulate Flight Delay
 
 POST
 
@@ -170,15 +189,16 @@ Request:
 
 Expected behavior:
 
-Flight delay is recorded.
-AeroSync detects the disruption.
-Conflict engine analyzes the itinerary.
-Affected activities are identified.
-Recovery Agent generates a revised itinerary.
-A new itinerary version is created.
-Notification is generated.
-Email notification is sent.
-Simulate Flight Cancellation
+1. Flight delay is recorded.
+2. AeroSync detects the disruption.
+3. Conflict engine analyzes the itinerary.
+4. Affected activities are identified.
+5. Recovery Agent generates a revised itinerary.
+6. A new itinerary version is created.
+7. Notification is generated.
+8. Email notification is sent.
+
+### Simulate Flight Cancellation
 
 POST
 
@@ -189,39 +209,48 @@ Request:
 {
   "bookingId": "BOOKING001"
 }
-8. Disruptions
-Get Trip Disruptions
+
+---
+
+## 8. Disruptions
+
+### Get Trip Disruptions
 
 GET
 
 /api/trips/{trip_id}/disruptions
 
-Get Disruption
+### Get Disruption
 
 GET
 
 /api/disruptions/{disruption_id}
 
-Recover From Disruption
+### Recover From Disruption
 
 POST
 
 /api/disruptions/{disruption_id}/recover
 
-9. Notifications
-Get User Notifications
+---
+
+## 9. Notifications
+
+### Get User Notifications
 
 GET
 
 /api/users/{user_id}/notifications
 
-Mark Notification as Read
+### Mark Notification as Read
 
 PUT
 
 /api/notifications/{notification_id}/read
 
-10. HTTP Status Codes
+---
+
+## 10. HTTP Status Codes
 
 Use these standard status codes:
 
@@ -239,12 +268,15 @@ Use these standard status codes:
 
 500 — Internal server error
 
-11. API Rules
-Frontend communicates with backend only through these APIs.
-Frontend must never directly access MongoDB.
-Backend must validate all incoming requests.
-API responses should follow the standard response format.
-Breaking API changes must be discussed with the team.
-If an API changes, this document must also be updated.
-Never expose API keys or secrets in API responses.
-Use UTC timestamps in backend/database operations.
+---
+
+## 11. API Rules
+
+1. Frontend communicates with backend only through these APIs.
+2. Frontend must never directly access MongoDB.
+3. Backend must validate all incoming requests.
+4. API responses should follow the standard response format.
+5. Breaking API changes must be discussed with the team.
+6. If an API changes, this document must also be updated.
+7. Never expose API keys or secrets in API responses.
+8. Use UTC timestamps in backend/database operations.
