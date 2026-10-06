@@ -1,0 +1,254 @@
+# ============================================================
+# SahaYatra - Git Ignore
+# ============================================================
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+
+*.env
+
+# Keep the example environment file
+!.env.example
+
+
+# -------------------------
+# Node.js / React / Vite
+# -------------------------
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.npm/
+.pnpm-store/
+
+dist/
+build/
+.vite/
+
+coverage/
+
+*.tsbuildinfo
+
+
+# -------------------------
+# Python
+# -------------------------
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.pyo
+*.pyd
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+.pyre/
+.hypothesis/
+
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+pip-wheel-metadata/
+
+# Jupyter
+.ipynb_checkpoints/
+
+
+# -------------------------
+# FastAPI / Local Runtime
+# -------------------------
+
+*.log
+logs/
+
+tmp/
+temp/
+
+uploads/
+outputs/
+
+
+# -------------------------
+# MongoDB / Local Database
+# -------------------------
+
+mongodb-data/
+mongo-data/
+
+*.db
+*.sqlite
+*.sqlite3
+
+
+# -------------------------
+# IDE / Editors
+# -------------------------
+
+.vscode/
+.idea/
+
+*.swp
+*.swo
+
+*.code-workspace
+
+.DS_Store
+Thumbs.db
+
+
+# -------------------------
+# OS Generated Files
+# -------------------------
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Icon?
+
+._*
+
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+
+# -------------------------
+# Testing / Reports
+# -------------------------
+
+test-results/
+playwright-report/
+blob-report/
+
+*.xml
+*.html
+
+
+# -------------------------
+# Temporary Files
+# -------------------------
+
+*.tmp
+*.temp
+*.bak
+*.backup
+
+*.cache
+
+*.pid
+
+
+# -------------------------
+# AI / Coding Tool Files
+# -------------------------
+
+.cursor/
+.cursorrules
+
+# Local AI tool configuration
+.aider*
+.claude/
+
+
+# -------------------------
+# Local Configuration
+# -------------------------
+
+*.local
+
+# Keep explicitly tracked configuration examples
+!.env.example
+
+
+# -------------------------
+# Secrets / Credentials
+# -------------------------
+
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+credentials.json
+service-account.json
+secrets.json
+
+google-credentials.json
+
+
+# -------------------------
+# Generated Files
+# -------------------------
+
+generated/
+generated-files/
+
+*.generated.*
+
+# Ignore local exports
+exports/
+
+
+# -------------------------
+# SahaYatra Specific
+# -------------------------
+
+# Local mock/demo data
+demo-data/
+mock-data/local/
+
+# Local development files
+.local/
+
+# Local notification/email test files
+email-preview/
+notification-preview/
+
+
+# ============================================================
+# IMPORTANT
+# ============================================================
+# Never commit:
+# - .env files
+# - API keys
+# - LLM keys
+# - MongoDB credentials
+# - Email credentials
+# - Private certificates
+# - Service-account credentials
+#
+# Use .env.example for required environment variable names.
+# ============================================================
